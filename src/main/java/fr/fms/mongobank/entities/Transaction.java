@@ -14,7 +14,7 @@ public class Transaction implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private Long _id;
+    private String _id;
     private Double amount;
 
     // @ManyToOne
@@ -24,7 +24,7 @@ public class Transaction implements Serializable {
 
     }
 
-    public Transaction(Long _id, Double amount) {
+    public Transaction(String _id, Double amount) {
         this._id = _id;
         this.amount = amount;
     }
@@ -36,14 +36,14 @@ public class Transaction implements Serializable {
     /**
      * @return the id
      */
-    public Long getId() {
+    public String getId() {
         return _id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(Long id) {
+    public void setId(String id) {
         this._id = id;
     }
 

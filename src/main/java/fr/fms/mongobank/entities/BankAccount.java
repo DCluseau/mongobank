@@ -15,7 +15,7 @@ public class BankAccount implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private Long _id;
+    private String _id;
     private Double balance;
 
     private Client client;
@@ -26,7 +26,7 @@ public class BankAccount implements Serializable {
 
     }
 
-    public BankAccount(Long _id, Double balance) {
+    public BankAccount(String _id, Double balance) {
         this._id = _id;
         this.balance = balance;
     }
@@ -38,15 +38,15 @@ public class BankAccount implements Serializable {
     /**
      * @return the id
      */
-    public Long getId() {
+    public String getId() {
         return _id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(Long id) {
-        this._id = _id;
+    public void setId(String id) {
+        this._id = id;
     }
 
     /**
