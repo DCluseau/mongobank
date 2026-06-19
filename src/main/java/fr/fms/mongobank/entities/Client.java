@@ -15,7 +15,7 @@ public class Client{
     // private static final long serialVersionUID = 1L;
 
     @Id
-    private Long id;
+    private Long _id;
     private String lastname;
     private String firstname;
 
@@ -25,8 +25,8 @@ public class Client{
 
     }
 
-    public Client(long id, String lastname, String firstname) {
-        this.id = id;
+    public Client(long _id, String lastname, String firstname) {
+        this._id = _id;
         this.lastname = lastname;
         this.firstname = firstname;
     }
@@ -40,14 +40,14 @@ public class Client{
      * @return the id
      */
     public Long getId() {
-        return id;
+        return _id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long _id) {
+        this._id = _id;
     }
 
     /**
@@ -80,7 +80,7 @@ public class Client{
 
     @Override
     public String toString() {
-        return "Client [id=" + id + ", lastname=" + lastname + ", description=" + firstname + ", price=" + firstname
+        return "Client [id=" + _id + ", lastname=" + lastname + ", description=" + firstname + ", price=" + firstname
                 + "]";
     }
 }
