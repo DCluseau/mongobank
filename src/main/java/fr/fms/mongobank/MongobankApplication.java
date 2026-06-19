@@ -1,6 +1,7 @@
 package fr.fms.mongobank;
 
 // import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
@@ -10,7 +11,7 @@ import fr.fms.mongobank.entities.Client;
 
 @SpringBootApplication
 @EnableMongoRepositories
-public class MongobankApplication {
+public class MongobankApplication implements CommandLineRunner {
 	private final ClientRepository clientRepository;
 
     public MongobankApplication(ClientRepository clientRepository){
@@ -25,7 +26,9 @@ public class MongobankApplication {
 		// ClientRepository clientRepository;
 
 		Client client = new Client("nom", "prénom");
-		clientRepository.save(client);
+		Client savedClient = clientRepository.save(client);
+		System.out.println("Test : Client bien inséré en base !");
+		System.out.println("ID généré : " + savedClient.getId());
 
 	}
 }
