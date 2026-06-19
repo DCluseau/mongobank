@@ -63,12 +63,37 @@ public class BankAccount implements Serializable {
         this.balance = balance;
     }
 
+    /**
+     * @return the balance
+     */
+    public Collection<Transaction> getTransactions() {
+        return this.transactions;
+    }
+
+    /**
+     * @param balance the name to set
+     */
+    public void setBalance(Collection<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
     @Override
     /*
      * Article not displayed to avoid errors
      */
     public String toString() {
-        return "BankAccount [id=" + _id + ", balance=" + balance + "]";
+        return "BankAccount [id=" + _id + ", balance=" + balance + ", transactions=" + transactions + "]";
     }
 
+    public void addTransaction(Transaction transaction){
+        this.transactions.add(transaction);
+    }
+
+    public void updateTransaction(Transaction transaction){
+        // this.transactions.add(transaction);
+    }
+
+    public void deleteTransaction(Transaction transaction){
+        
+    }
 }

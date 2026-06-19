@@ -77,15 +77,21 @@ public class Client{
     }
 
     /**
+     * @return the firstname
+     */
+    public Collection<BankAccount> getBankAccount() {
+        return this.bankAccounts;
+    }
+
+    /**
      * @param firstname the description to set
      */
-    public void setDescription(String firstname) {
-        this.firstname = firstname;
+    public void setBankAccounts(Collection<BankAccount> bankAccounts) {
+        this.bankAccounts = bankAccounts;
     }
 
     @Override
     public String toString() {
-        return "Client [id=" + _id + ", lastname=" + lastname + ", description=" + firstname + ", price=" + firstname
-                + "]";
+        return "Client [id=" + _id + ", lastname=" + lastname + ", description=" + firstname + ", bank accounts= " + this.bankAccounts + "]";
     }
 }

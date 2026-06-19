@@ -24,9 +24,10 @@ public class Transaction implements Serializable {
 
     }
 
-    public Transaction(String _id, Double amount) {
+    public Transaction(String _id, Double amount, BankAccount bankAccount) {
         this._id = _id;
         this.amount = amount;
+        this.bankAccount = bankAccount;
     }
 
     public Transaction(Double amount) {
@@ -61,12 +62,26 @@ public class Transaction implements Serializable {
         this.amount = amount;
     }
 
+    /**
+     * @return the bankAccount
+     */
+    public BankAccount getBankAccount() {
+        return this.bankAccount;
+    }
+
+    /**
+     * @param bankAccount the amount to set
+     */
+    public void setAmount(BankAccount bankAccount) {
+        this.bankAccount = bankAccount;
+    }
+
     @Override
     /*
      * Article not displayed to avoid errors
      */
     public String toString() {
-        return "Transaction [id=" + _id + ", amount=" + amount + "]";
+        return "Transaction [id=" + _id + ", amount=" + amount + ", bank account=" + this.bankAccount + "]";
     }
 
 }
