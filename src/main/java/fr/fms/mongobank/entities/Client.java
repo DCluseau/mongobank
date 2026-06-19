@@ -6,7 +6,12 @@ import java.util.Collection;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 @Document(collection = "client")
+@Data
+@AllArgsConstructor
 public class Client{
 
     /**
@@ -15,7 +20,7 @@ public class Client{
     // private static final long serialVersionUID = 1L;
 
     @Id
-    private Long _id;
+    private String _id;
     private String lastname;
     private String firstname;
 
@@ -25,7 +30,7 @@ public class Client{
 
     }
 
-    public Client(long _id, String lastname, String firstname) {
+    public Client(String _id, String lastname, String firstname) {
         this._id = _id;
         this.lastname = lastname;
         this.firstname = firstname;
@@ -39,14 +44,14 @@ public class Client{
     /**
      * @return the id
      */
-    public Long getId() {
+    public String getId() {
         return _id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(Long _id) {
+    public void setId(String _id) {
         this._id = _id;
     }
 
